@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form method="POST" action="/">
+		<p>Name : <input type="text" name="name"></p>
+		<p>Hobby : <input type="text" name="hobby"></p>
+		<button type="submit" name="submit">Submit</button>
+	</form>
+	<br>
+	<table border=1>
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>name</th>
+				<th>hobby</th>
+				<th>Delete</th>
+				<th>Update</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for d in data%}
+			<tr>
+				<td>{{d.id }}</td>
+				<td>{{d.name }}</td>
+				<td>{{d.hobby}}</td>
+				<td><a href="/delete/{{d.id}}">Delete</a></td>
+				<td><a href="/update/{{d.id}}">Update</a></td>
+
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html>
